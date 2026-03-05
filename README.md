@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="banner.png" alt="Airline Sentiment Analysis Banner" width="100%">
+  <img src="images/banner.png" width="100%">
 </p>
+
 ## Project Preview
 
 Below are key visual outputs generated in this project.
@@ -30,209 +31,155 @@ Below are key visual outputs generated in this project.
   <img src="outputs/figures/fig_05_confusion_matrix_tfidf_logreg.png" width="70%">
 </p>
 
-### 6) Airline vs Sentiment Breakdown
 <p align="center">
-  <img src="outputs/figures/fig_06_airline_sentiment_breakdown.png" width="85%">
+  <img src="images/banner1.png" width="100%">
 </p>
-Airline Sentiment Analysis using NLP and Transformers
-AirlineSentimentAI
-NLP Sentiment Analysis of Airline Tweets
 
-This project builds an end-to-end Natural Language Processing (NLP) pipeline to classify airline tweets into negative, neutral, and positive sentiment using machine learning and transformer models.
+# ✈️ Airline Sentiment Analysis using NLP
 
-The dataset used is the Twitter US Airline Sentiment dataset from Kaggle, containing 14,640 customer tweets directed at major US airlines.
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-green)
+![Scikit-Learn](https://img.shields.io/badge/ML-ScikitLearn-orange)
+![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-yellow)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
-Project Objectives
+---
 
-The main goal of this project is to analyse airline customer feedback on Twitter and build models that automatically classify sentiment.
+# Project Overview
 
-Key objectives:
+This project applies **Natural Language Processing (NLP)** techniques to analyze customer sentiment in airline-related tweets.
 
-Understand airline customer feedback patterns
+The objective is to automatically classify tweets into **positive, neutral, or negative sentiment**, helping identify patterns in customer complaints and feedback.
 
-Perform exploratory data analysis
+The project demonstrates a **complete machine learning pipeline**, including:
 
-Build a baseline machine learning model
+• Data exploration
+• Text preprocessing
+• Feature engineering using TF-IDF
+• Sentiment classification
+• Model evaluation and visualization
 
-Evaluate model performance
+Dataset used: **Twitter US Airline Sentiment (Kaggle)**
 
-Explore modern transformer models for improved sentiment classification
+---
 
-Dataset
+# Dataset
 
-Source: Kaggle – Twitter US Airline Sentiment
+The dataset contains **14,640 tweets** directed at major US airlines.
 
-Key features of the dataset:
+### Key Columns
 
-14,640 tweets
+| Column            | Description                   |
+| ----------------- | ----------------------------- |
+| text              | Tweet content                 |
+| airline_sentiment | Target sentiment label        |
+| airline           | Airline mentioned             |
+| negativereason    | Reason for negative sentiment |
 
-Sentiment labels:
+### Airlines Included
 
-Negative
+* United
+* American
+* Delta
+* Southwest
+* US Airways
+* Virgin America
 
-Neutral
+---
 
-Positive
+# Project Workflow
 
-Airlines included:
+The project follows a structured **NLP pipeline**:
 
-United
+1. Data Loading
+2. Exploratory Data Analysis
+3. Sentiment Distribution Analysis
+4. Negative Reason Analysis
+5. Text Cleaning and Preprocessing
+6. Feature Engineering (TF-IDF)
+7. Logistic Regression Model Training
+8. Model Evaluation
+9. Visualization of Results
 
-American
+---
 
-Delta
+# Key Visualizations
 
-Southwest
+## Sentiment Distribution
 
-US Airways
+<p align="center">
+  <img src="outputs/figures/fig_01_sentiment_distribution.png" width="80%">
+</p>
 
-Virgin America
+The dataset shows a strong presence of **negative airline feedback**, reflecting common customer frustrations.
 
-The primary feature used for modeling is the tweet text.
+---
 
-Project Workflow
+## Tweets per Airline
 
-The project follows a structured NLP pipeline:
+<p align="center">
+  <img src="outputs/figures/fig_02_tweets_per_airline.png" width="80%">
+</p>
 
-Data Loading
+This chart shows the distribution of tweets across different airlines.
 
-Exploratory Data Analysis
+---
 
-Sentiment Distribution Analysis
+## Top Reasons for Negative Sentiment
 
-Negative Tweet Insights
+<p align="center">
+  <img src="outputs/figures/fig_03_top_negative_reasons.png" width="80%">
+</p>
 
-Text Cleaning & Preprocessing
+Frequent complaint categories include:
 
-Feature Engineering using TF-IDF
+• Flight delays
+• Flight cancellations
+• Poor customer service
+• Late notifications
 
-Logistic Regression Baseline Model
+---
 
-Model Evaluation
+## Word Cloud of Negative Tweets
 
-WordCloud Visualization
+<p align="center">
+  <img src="outputs/figures/fig_04_wordcloud_negative_tweets.png" width="80%">
+</p>
 
-Feature Importance Analysis
+The word cloud highlights the most frequent terms used in negative airline tweets.
 
-Transformer Model Upgrade (DistilBERT)
+---
 
-Exploratory Data Analysis
+## Confusion Matrix
 
-The dataset shows a strong imbalance toward negative sentiment, reflecting common airline complaints.
+<p align="center">
+  <img src="outputs/figures/fig_05_confusion_matrix_tfidf_logreg.png" width="65%">
+</p>
 
-Frequent complaint topics include:
+The confusion matrix visualizes how accurately the model classifies tweet sentiment.
 
-Flight delays
+---
 
-Customer service issues
+# Model
 
-Flight cancellations
+The baseline sentiment classifier uses:
 
-Long wait times
+**TF-IDF + Logistic Regression**
 
-Visualizations include:
+TF-IDF converts tweet text into numerical features that the model can learn from.
 
-Sentiment distribution
+---
 
-Tweets per airline
+# Model Performance
 
-Negative complaint reasons
+| Model                    | Features    | Accuracy | Notes                 |
+| ------------------------ | ----------- | -------- | --------------------- |
+| Logistic Regression      | TF-IDF      | ~79%     | Baseline ML model     |
+| DistilBERT (Future Work) | Transformer | TBD      | Deep learning upgrade |
 
-WordCloud Analysis
+---
 
-A WordCloud was generated using negative tweets to highlight common complaint keywords.
-
-Common terms included:
-
-delay
-
-cancelled
-
-hours
-
-customer service
-
-hold
-
-This provides insight into the most frequent airline service issues.
-
-Baseline Model
-
-A baseline sentiment classifier was built using:
-
-TF-IDF + Logistic Regression
-
-This approach converts text into numerical features using TF-IDF and trains a classifier to predict tweet sentiment.
-
-Evaluation metrics include:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1 Score
-
-Confusion Matrix
-
-Model Evaluation
-
-Model performance was evaluated on a test dataset.
-
-The confusion matrix helps visualize:
-
-correct predictions
-
-misclassifications
-
-class imbalance effects
-
-Feature Importance
-
-Logistic Regression coefficients were analyzed to identify words strongly associated with each sentiment category.
-
-Examples:
-
-Negative words
-
-delay
-
-cancelled
-
-worst
-
-hours
-
-customer service
-
-Positive words
-
-thanks
-
-great
-
-appreciate
-
-awesome
-
-This provides transparency into how the model interprets language.
-
-Advanced Model (Transformer)
-
-To improve performance, the project introduces DistilBERT, a transformer-based NLP model.
-
-Benefits of transformer models:
-
-better contextual understanding
-
-improved semantic representation
-
-stronger performance on complex language patterns
-
-DistilBERT provides a modern deep-learning alternative to traditional TF-IDF models.
-
-Technologies Used
+# Technologies Used
 
 Python
 Pandas
@@ -241,24 +188,58 @@ Matplotlib
 Seaborn
 Scikit-learn
 WordCloud
-PyTorch
-HuggingFace Transformers
+Jupyter Notebook
 
-Future Improvements
+---
 
-Possible extensions include:
+# Project Structure
 
-Hyperparameter tuning
+```
+airline-sentiment-nlp
+│
+├── data
+│   └── Tweets.csv
+│
+├── notebook
+│   └── Airline_Sentiment_NLP.ipynb
+│
+├── outputs
+│   ├── figures
+│   ├── metrics
+│   ├── models
+│   └── logs
+│
+├── images
+│   └── banner1.png
+│
+├── README.md
+└── .gitignore
+```
 
-Fine-tuning DistilBERT
+---
 
-Error analysis of misclassified tweets
+# Future Improvements
 
-Deploying the model with Streamlit
+Potential improvements include:
 
-Real-time sentiment monitoring dashboards
+• Hyperparameter tuning
+• Transformer models (BERT / DistilBERT)
+• Real-time sentiment monitoring dashboard
+• Deployment using Streamlit
 
-Author
+---
 
-Noor Saba
+# Author
+
+**Noor Saba**
+
 Aspiring Data Scientist | AI & Machine Learning Enthusiast
+
+GitHub:
+https://github.com/noorsaba5
+
+---
+
+# Summary
+
+This project demonstrates how **Natural Language Processing techniques can transform raw customer feedback into actionable insights**, helping organizations better understand customer sentiment and improve service quality.
