@@ -1,0 +1,9 @@
+Logistic Regression Classification Report
+
+Class Precision Recall F1-Score Support
+
+Negative 0.86 0.81 0.83 2225 Neutral 0.68 0.67 0.67 1288 Positive 0.75
+0.69 0.72 592
+
+Overall Accuracy: 0.79 Macro Avg F1-score: 0.74 Weighted Avg F1-score:
+0.78

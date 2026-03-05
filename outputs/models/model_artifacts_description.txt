@@ -1,0 +1,9 @@
+Model Artifacts (Placeholders)
+
+tfidf_vectorizer.joblib logistic_regression_model.joblib
+
+These files represent trained artifacts that would normally be saved
+after training the ML pipeline. They can be produced using:
+
+joblib.dump(tfidf_vectorizer, “tfidf_vectorizer.joblib”)
+joblib.dump(model, “logistic_regression_model.joblib”)
